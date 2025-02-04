@@ -3,7 +3,7 @@ RM = rm -f
 CC = cc
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 INCLUDES = -Iincludes
-SRC = $(addprefix src/push_swap/, push_swap.c parse_input.c stack.c utils.c)
+SRC = $(addprefix src/push_swap/, push_swap.c parse_input.c stack_utils.c normalize_stack.c)
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)

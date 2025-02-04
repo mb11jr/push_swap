@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:52:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/04 16:08:37 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:46:38 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	free_split(char **split);
 void	valid_arguments(t_stack *stack, char **split_arg);
 void	parse_input(int ac, char **av, t_stack *stack);
 t_node	*create_node(int value);
-t_stack	*create_stack(void);
+t_stack	*init_stack(void);
 void	push(t_stack *stack, int value);
 long	ft_atol(const char *str);
-
+void	normalize_stack(t_stack *stack);
 
 #endif
