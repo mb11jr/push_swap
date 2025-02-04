@@ -1,7 +1,7 @@
 NAME = push_swap
 RM = rm -f
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 INCLUDES = -Iincludes
 SRC = src/push_swap/push_swap.c
 OBJ = $(SRC:.c=.o)
