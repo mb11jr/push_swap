@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:52:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/05 13:48:59 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:36:19 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,11 @@ void    rotate(t_stack *stack);
 void    ra(t_stack *stack_a);
 void    rb(t_stack *stack_b);
 void    reverse_rotate(t_stack *stack);
+int		is_sorted(t_stack *stack);
+void    push_smallest(t_stack *a, t_stack *b);
+void    sort_two(t_stack *stack);
+void    sort_three(t_stack *stack);
+void    sort_four(t_stack *stack_a, t_stack *stack_b);
+void    sort_five(t_stack *stack_a, t_stack *stack_b);
 
 #endif
