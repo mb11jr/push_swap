@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:52:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/04 17:46:38 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/05 13:48:59 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,20 @@ typedef struct s_stack
 	int				size;
 }					t_stack;
 
-int		is_digit(char *str);
-int		is_duplicate(t_stack *stack, int num);
-void	free_split(char **split);
-void	valid_arguments(t_stack *stack, char **split_arg);
-void	parse_input(int ac, char **av, t_stack *stack);
-t_node	*create_node(int value);
-t_stack	*init_stack(void);
-void	push(t_stack *stack, int value);
-long	ft_atol(const char *str);
-void	normalize_stack(t_stack *stack);
+void				parse_input(int ac, char **av, t_stack *stack);
+t_node				*create_node(int value);
+t_stack				*init_stack(void);
+void				free_stack(t_stack *stack);
+void				push_node(t_stack *stack, int value);
+long				ft_atol(const char *str);
+void				normalize_stack(t_stack *stack);
+void    swap(t_stack *stack);
+void    push(t_stack *src, t_stack *dst);
+void    pa(t_stack *stack_a, t_stack *stack_b);
+void    pb(t_stack *stack_a, t_stack *stack_b);
+void    rotate(t_stack *stack);
+void    ra(t_stack *stack_a);
+void    rb(t_stack *stack_b);
+void    reverse_rotate(t_stack *stack);
 
 #endif
