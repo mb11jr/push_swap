@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:52:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/06 18:36:19 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/06 22:59:21 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ void    sort_two(t_stack *stack);
 void    sort_three(t_stack *stack);
 void    sort_four(t_stack *stack_a, t_stack *stack_b);
 void    sort_five(t_stack *stack_a, t_stack *stack_b);
+int *clone_stack(t_stack *stack);
+void	quick_sort(int *arr, int start, int end);
+void    get_index(t_stack *stack, int *arr);
 
 #endif
