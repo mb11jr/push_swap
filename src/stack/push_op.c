@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:54:18 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/05 14:35:13 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/08 21:51:34 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	push(t_stack *src, t_stack *dst)
 	dst->size++;
 }
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_b, t_stack *stack_a)
 {
 	push(stack_b, stack_a);
 	ft_printf("pa\n");

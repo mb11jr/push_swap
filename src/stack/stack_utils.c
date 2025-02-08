@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:06:39 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/05 12:01:53 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/08 10:12:46 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ t_node	*create_node(int value)
 	new = malloc(sizeof(t_node));
 	if (!new)
 		return (NULL);
+	ft_bzero(new, sizeof(t_node));
 	new->value = value;
 	new->index = -1;
-	new->next = NULL;
-	new->prev = NULL;
+	// new->next = NULL;
+	// new->prev = NULL;
 	return (new);
 }
 
