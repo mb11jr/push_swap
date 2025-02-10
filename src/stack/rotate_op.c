@@ -6,13 +6,13 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:13:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/09 12:11:24 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/10 21:52:53 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_stack *stack)
+static void	rotate(t_stack *stack)
 {
 	t_node	*node;
 

@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_small_utils.c                                 :+:      :+:    :+:   */
+/*   sort_large_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 18:34:06 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/08 15:28:12 by mbentale         ###   ########.fr       */
+/*   Created: 2025/02/10 21:29:32 by mbentale          #+#    #+#             */
+/*   Updated: 2025/02/10 21:59:58 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_sorted(t_stack *stack)
-{
-	t_node	*current;
-
-	if (!stack || stack->size < 2)
-		return (1);
-	current = stack->top;
-	while (current)
-	{
-		if (current->next && current->value > current->next->value)
-			return (0);
-		current = current->next;
-	}
-	return (1);
-}
 
 static void	move_to_top(t_stack *stack, int pos)
 {
@@ -34,7 +18,7 @@ static void	move_to_top(t_stack *stack, int pos)
 	{
 		while (pos > 0)
 		{
-			rotate(stack);
+			ra(stack);
 			pos--;
 		}
 	}
@@ -43,7 +27,7 @@ static void	move_to_top(t_stack *stack, int pos)
 		pos = stack->size - pos;
 		while (pos > 0)
 		{
-			reverse_rotate(stack);
+			rra(stack);
 			pos--;
 		}
 	}
@@ -73,5 +57,44 @@ void	push_smallest(t_stack *a, t_stack *b)
 		i++;
 	}
 	move_to_top(a, pos);
-	push(a, b);
+	pb(a, b);
+}
+
+int	max_index(t_stack *stack)
+{
+	t_node	*tmp;
+	int		max;
+	int		max_index;
+	int		i;
+
+	tmp = stack->top;
+	max = tmp->value;
+	max_index = 0;
+	i = 0;
+	while (tmp)
+	{
+		if (tmp->value > max)
+		{
+			max = tmp->value;
+			max_index = i;
+		}
+		i++;
+		tmp = tmp->next;
+	}
+	return (max_index);
+}
+
+void	update_start_end(int *start, int *end, int size)
+{
+	if (*start <= (*end) - 1)
+		(*start)++;
+	if (*end <= size - 1)
+		(*end)++;
+}
+
+int	get_range(int size)
+{
+	if (size <= 100)
+		return (size / 5);
+	return (size / 13);
 }

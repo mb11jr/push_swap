@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:38:47 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/09 10:26:19 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/10 21:28:09 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	ft_swap(int *a, int *b)
 	*b = tmp;
 }
 
-int	partition(int *arr, int start, int end)
+static int	partition(int *arr, int start, int end)
 {
 	int	i;
 	int	j;
@@ -72,24 +72,24 @@ void	quick_sort(int *arr, int start, int end)
 	}
 }
 
-void    get_index(t_stack *stack, int *arr)
+void	get_index(t_stack *stack, int *arr)
 {
-    t_node *current;
-    int i;
+	t_node	*current;
+	int		i;
 
-    current = stack->top;
-    while(current)
-    {
-        i = 0;
-        while (i <= stack->size - 1)
-        {
-            if (current->value == arr[i])
-            {
-                current->index = i;
-                break;
-            }
-            i++;
-        }
-        current = current->next;
-    }
+	current = stack->top;
+	while (current)
+	{
+		i = 0;
+		while (i <= stack->size - 1)
+		{
+			if (current->value == arr[i])
+			{
+				current->index = i;
+				break ;
+			}
+			i++;
+		}
+		current = current->next;
+	}
 }

@@ -6,13 +6,13 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:54:18 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/10 15:46:40 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/10 21:52:22 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack *src, t_stack *dst)
+static void	push(t_stack *src, t_stack *dst)
 {
 	t_node	*node;
 

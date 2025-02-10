@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:06:39 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/08 10:12:46 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/10 21:37:56 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ t_node	*create_node(int value)
 	ft_bzero(new, sizeof(t_node));
 	new->value = value;
 	new->index = -1;
-	// new->next = NULL;
-	// new->prev = NULL;
 	return (new);
 }
 
@@ -34,9 +32,7 @@ t_stack	*init_stack(void)
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
-	stack->top = NULL;
-	stack->bottom = NULL;
-	stack->size = 0;
+	ft_bzero(stack, sizeof(t_stack));
 	return (stack);
 }
 
@@ -57,24 +53,8 @@ void	push_node(t_stack *stack, int value)
 		stack->bottom->next = new_node;
 		new_node->prev = stack->bottom;
 		stack->bottom = new_node;
-		// new_node->next = stack->top;
-		// stack->top->prev = new_node;
-		// stack->top = new_node;
 	}
 	stack->size++;
-}
-
-void	free_stack(t_stack *stack)
-{
-	t_node	*tmp;
-
-	while (stack->top)
-	{
-		tmp = stack->top;
-		stack->top = stack->top->next;
-		free(tmp);
-	}
-	free(stack);
 }
 
 long	ft_atol(const char *str)

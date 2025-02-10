@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_op.c                                         :+:      :+:    :+:   */
+/*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:31:35 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/05 10:40:49 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/10 21:52:03 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack *stack)
+static void	swap(t_stack *stack)
 {
 	t_node	*first;
 	t_node	*second;
