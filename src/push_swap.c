@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 09:54:43 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/08 22:17:39 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:43:54 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_node	*current;
+	// t_node	*current;
 	int		*arr;
 	// int		i = 0;
 
@@ -44,15 +44,16 @@ int	main(int ac, char **av)
 	arr = clone_stack(stack_a);
 	quick_sort(arr, 0, stack_a->size - 1);
 	get_index(stack_a, arr);
-	if (stack_a->size >= 5 && stack_a->size <= 500)
+	if (stack_a->size > 5)
 		sort_large(stack_a, stack_b);
-	ft_printf("printing sorted stack:\n");
-	current = stack_a->top;
-	while(current)
-	{
-		ft_printf("%d\n", current->value);
-		current = current->next;
-	}
+	// ft_printf("printing sorted stack:\n");
+	// current = stack_a->top;
+	// while(current)
+	// {
+	// 	ft_printf("%d--->", current->value);
+	// 	current = current->next;
+	// }
+	// ft_printf("NULL");
 	free(arr);
 	free_stack(stack_a);
 	free_stack(stack_b);

@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:13:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/05 14:40:28 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/09 12:11:24 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ra(t_stack *stack_a)
 void	rb(t_stack *stack_b)
 {
 	rotate(stack_b);
+	ft_printf("rb\n");
 }
 
 void	rr(t_stack *stack_a, t_stack *stack_b)
