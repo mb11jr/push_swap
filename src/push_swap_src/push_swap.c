@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 09:54:43 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/10 22:03:33 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:10:40 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	main(int ac, char **av)
 	get_index(stack_a, arr);
 	stack_b = init_stack();
 	ft_sort(stack_a, stack_b);
-	// print_stack(stack_a);
 	free(arr);
 	free_stack(stack_a);
 	free_stack(stack_b);

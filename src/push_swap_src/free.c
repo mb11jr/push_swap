@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 21:25:19 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/10 21:33:09 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:49:22 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	free_split(char **split)
 
 void	ft_exit(t_stack *stack)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	free_stack(stack);
 	exit(1);
 }
