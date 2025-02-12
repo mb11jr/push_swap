@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:52:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/11 15:21:18 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/12 13:10:42 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../ft_printf/include/ft_printf.h"
+# include "../gnl/get_next_line.h"
 # include <stdlib.h>
 
 typedef struct s_node
@@ -42,6 +43,7 @@ void				push_node(t_stack *stack, int value);
 long				ft_atol(t_stack *stack, char **split_arg, const char *str);
 void				sa(t_stack *stack_a);
 void				sb(t_stack *stack_b);
+void				ss(t_stack *stack_a, t_stack *stack_b);
 void				pa(t_stack *stack_b, t_stack *stack_a);
 void				pb(t_stack *stack_a, t_stack *stack_b);
 void				ra(t_stack *stack_a);
@@ -63,4 +65,6 @@ void				get_index(t_stack *stack, int *arr);
 int					max_index(t_stack *stack);
 void				update_start_end(int *start, int *end, int size);
 int					get_range(int size);
+int    				valid_instruction(char *action, t_stack *stack_a, t_stack *stack_b);
+
 #endif
