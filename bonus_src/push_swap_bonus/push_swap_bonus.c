@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 09:54:43 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/12 13:42:23 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/12 22:33:52 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,23 @@ void	exec_instruction(t_stack *stack_a, t_stack *stack_b, int i)
 		rrr(stack_a, stack_b);
 }
 
-int    valid_instruction(char *action, t_stack *stack_a, t_stack *stack_b)
+int	valid_instruction(char *action, t_stack *stack_a, t_stack *stack_b)
 {
-    unsigned int i;
-    const char *actions[] = {"pa", "pb", "sa", "sb", "ss", "ra", "rb", "rr", "rra", "rrb", "rrr"};
+	unsigned int	i;
+	const char		*arr[] = {"pa\n", "pb\n", "sa\n", "sb\n", "ss\n", "ra\n",
+				"rb\n", "rr\n", "rra\n", "rrb\n", "rrr\n"};
 
-    i = 0;
-    while (i <= 10)
-    {
-        if (ft_strncmp(action, actions[i], 2) == 0)
+	i = 0;
+	while (i <= 10)
+	{
+		if (ft_strncmp(action, arr[i], ft_strlen(arr[i])) == 0)
 		{
 			exec_instruction(stack_a, stack_b, i);
-            return 1;
+			return (1);
 		}
-        i++;
-    }
-    return 0;
+		i++;
+	}
+	return (0);
 }
 
 void	print_stack(t_stack *stack)
@@ -70,12 +71,19 @@ void	print_stack(t_stack *stack)
 	ft_printf("NULL");
 }
 
+void	ft_checker(t_stack *a, t_stack *b, char *str, int status)
+{
+	ft_printf("%s\n", str);
+	free_stack(a);
+	free_stack(b);
+	exit(status);
+}
+
 int	main(int ac, char **av)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	char *action;
+	char	*action;
 
+	t_stack(*stack_a), (*stack_b);
 	if (ac < 2)
 		return (0);
 	stack_a = init_stack();
@@ -86,26 +94,15 @@ int	main(int ac, char **av)
 	{
 		if (!valid_instruction(action, stack_a, stack_b))
 		{
+			free(action);
 			free_stack(stack_b);
 			ft_exit(stack_a);
 		}
 		free(action);
 		action = get_next_line(0);
 	}
-	print_stack(stack_a);
+	free(action);
 	if (is_sorted(stack_a) && !stack_b->top)
-	{
-		ft_printf("OK\n");
-		free_stack(stack_a);
-		free_stack(stack_b);
-		return (0);
-	}
-	else
-	{
-		ft_printf("KO\n");
-		free_stack(stack_a);
-		free_stack(stack_b);
-		return (1);
-	}
-	return (0);
+		ft_checker(stack_a, stack_b, "OK", 0);
+	ft_checker(stack_a, stack_b, "KO", 1);
 }
