@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:52:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/10 21:58:05 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:21:18 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void				ft_free(t_stack *stack, char **split_arg);
 t_node				*create_node(int value);
 t_stack				*init_stack(void);
 void				push_node(t_stack *stack, int value);
-long				ft_atol(const char *str);
+long				ft_atol(t_stack *stack, char **split_arg, const char *str);
 void				sa(t_stack *stack_a);
 void				sb(t_stack *stack_b);
 void				pa(t_stack *stack_b, t_stack *stack_a);

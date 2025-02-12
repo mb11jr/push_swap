@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:06:39 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/10 21:37:56 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:20:48 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	push_node(t_stack *stack, int value)
 	stack->size++;
 }
 
-long	ft_atol(const char *str)
+long	ft_atol(t_stack *stack, char **split_arg, const char *str)
 {
 	int		i;
 	int		sign;
@@ -77,8 +77,8 @@ long	ft_atol(const char *str)
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		value = value * 10 + str[i] - 48;
-		if (value < 0)
-			return (-sign * (sign == 1));
+		if (value * sign > INT_MAX || value * sign < INT_MIN)
+			ft_free(stack, split_arg);
 		i++;
 	}
 	return (value * sign);

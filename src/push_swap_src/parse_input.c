@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:36:37 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/11 14:47:22 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/12 09:51:00 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,14 @@ static int	is_duplicate(t_stack *stack, int num)
 
 static void	valid_arguments(t_stack *stack, char **split_arg)
 {
-	int		j;
 	long	num;
+	int		j;
 
 	j = 0;
 	while (split_arg[j])
 	{
-		if (!is_digit(split_arg[j]))
-			ft_free(stack, split_arg);
-		num = ft_atol(split_arg[j]);
-		if (num < INT_MIN || num > INT_MAX || is_duplicate(stack, num))
+		num = ft_atol(stack, split_arg, split_arg[j]);
+		if (!is_digit(split_arg[j]) || is_duplicate(stack, num))
 			ft_free(stack, split_arg);
 		push_node(stack, num);
 		j++;
@@ -64,9 +62,9 @@ static void	valid_arguments(t_stack *stack, char **split_arg)
 
 void	parse_input(int ac, char **av, t_stack *stack)
 {
-	int		i;
 	char	**split_arg;
 	char	*arg;
+	int		i;
 
 	i = 1;
 	while (i < ac)
