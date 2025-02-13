@@ -19,25 +19,43 @@ all : $(NAME)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME) : $(OBJ)
+	@echo "Compiling source files...⏳"
+	@echo "Done ✅"
+	@echo "Compiling ft_printf, and libft source files...⏳"
 	@$(MAKE) ft_printf
+	@echo "Done ✅"
+	@echo "Linking...⏳"
+	@echo "Done ✅"
 	@$(CC) $(CFLAGS) $(OBJ) ./ft_printf/libftprintf.a -o $(NAME)
+	@echo "Your program [ $(NAME) ] is ready!"
 
 bonus : $(BONUS)
 
 $(BONUS) : $(BONUS_OBJ)
+	@echo "Compiling bonus files...⏳"
+	@echo "Done ✅"
+	@echo "Compiling ft_printf, libft, and GNL source files...⏳"
 	@$(MAKE) ft_printf
 	@$(MAKE) gnl
+	@echo "Done ✅"
+	@echo "Linking...⏳"
+	@echo "Done ✅"
 	@$(CC) $(CFLAGS) $(BONUS_OBJ) ./gnl/gnl.a ./ft_printf/libftprintf.a -o $(BONUS)
+	@echo "Your program [ $(BONUS) ] is ready!"
 
 clean :
+	@echo "Cleaning object files...🚮"
 	@$(RM) $(OBJ) $(BONUS_OBJ)
 	@$(MAKE) ft_printf clean
 	@$(MAKE) gnl clean
+	@echo "Done ✅"
 
 fclean : clean
+	@echo "Full clean begins... 🚮"
 	@$(RM) $(NAME) $(BONUS)
 	@$(MAKE) ft_printf fclean
 	@$(MAKE) gnl fclean
+	@echo "Full clean is done ✅"
 
 re : fclean all
 

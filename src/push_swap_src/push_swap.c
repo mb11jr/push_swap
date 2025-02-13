@@ -6,39 +6,11 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 09:54:43 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/12 09:41:22 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:44:16 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_stack *stack)
-{
-	t_node	*current;
-
-	ft_printf("printing sorted stack:\n");
-	current = stack->top;
-	while (current)
-	{
-		ft_printf("%d >> ", current->value);
-		current = current->next;
-	}
-	ft_printf("NULL");
-}
-
-void	ft_sort(t_stack *stack_a, t_stack *stack_b)
-{
-	if (stack_a->size == 2)
-		sort_two(stack_a);
-	else if (stack_a->size == 3)
-		sort_three(stack_a);
-	else if (stack_a->size == 4)
-		sort_four(stack_a, stack_b);
-	else if (stack_a->size == 5)
-		sort_five(stack_a, stack_b);
-	else
-		sort_large(stack_a, stack_b);
-}
 
 int	main(int ac, char **av)
 {

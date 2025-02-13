@@ -6,11 +6,43 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 10:41:37 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/10 21:58:44 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:22:38 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	max_index(t_stack *stack)
+{
+	t_node	*tmp;
+	int		max;
+	int		max_index;
+	int		i;
+
+	tmp = stack->top;
+	max = tmp->value;
+	max_index = 0;
+	i = 0;
+	while (tmp)
+	{
+		if (tmp->value > max)
+		{
+			max = tmp->value;
+			max_index = i;
+		}
+		i++;
+		tmp = tmp->next;
+	}
+	return (max_index);
+}
+
+static void	update_start_end(int *start, int *end, int size)
+{
+	if (*start <= (*end) - 1)
+		(*start)++;
+	if (*end <= size - 1)
+		(*end)++;
+}
 
 static void	push_to_b(t_stack *stack_a, t_stack *stack_b, int range)
 {
@@ -63,7 +95,10 @@ void	sort_large(t_stack *stack_a, t_stack *stack_b)
 {
 	int	range;
 
-	range = get_range(stack_a->size);
+	if (stack_a->size <= 100)
+		range = stack_a->size / 5;
+	else
+		range = stack_a->size / 13;
 	push_to_b(stack_a, stack_b, range);
 	push_back_to_a(stack_a, stack_b);
 }

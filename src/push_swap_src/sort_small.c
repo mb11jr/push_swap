@@ -6,27 +6,11 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:53:24 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/10 21:59:36 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:43:55 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_sorted(t_stack *stack)
-{
-	t_node	*current;
-
-	if (!stack || stack->size < 2)
-		return (1);
-	current = stack->top;
-	while (current)
-	{
-		if (current->next && current->value > current->next->value)
-			return (0);
-		current = current->next;
-	}
-	return (1);
-}
 
 void	sort_two(t_stack *stack)
 {

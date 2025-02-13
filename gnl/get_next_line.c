@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:17:39 by mbentale          #+#    #+#             */
-/*   Updated: 2024/11/30 09:54:57 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:04:03 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*get_next_line(int fd)
 	char		*rest;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+		return (free(stash_buffer), NULL);
 	stash_buffer = read_from_file(stash_buffer, fd);
 	if (!stash_buffer || !*stash_buffer)
 	{

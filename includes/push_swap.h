@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:52:13 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/12 13:10:42 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:54:44 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void				rra(t_stack *stack_a);
 void				rrb(t_stack *stack_b);
 void				rrr(t_stack *stack_a, t_stack *stack_b);
 int					is_sorted(t_stack *stack);
+void				ft_sort(t_stack *stack_a, t_stack *stack_b);
 void				sort_two(t_stack *stack);
 void				sort_three(t_stack *stack);
 void				sort_four(t_stack *stack_a, t_stack *stack_b);
@@ -62,9 +63,7 @@ void				push_smallest(t_stack *a, t_stack *b);
 int					*clone_stack(t_stack *stack);
 void				quick_sort(int *arr, int start, int end);
 void				get_index(t_stack *stack, int *arr);
-int					max_index(t_stack *stack);
-void				update_start_end(int *start, int *end, int size);
-int					get_range(int size);
 int    				valid_instruction(char *action, t_stack *stack_a, t_stack *stack_b);
+void				ft_checker(t_stack *a, t_stack *b, char *str, int status);
 
 #endif
