@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 09:54:43 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/13 10:59:40 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:57:42 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	*action;
-	
+
 	if (ac < 2)
 		return (0);
 	stack_a = init_stack();

@@ -6,7 +6,7 @@
 /*   By: mbentale <mbentale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 21:29:32 by mbentale          #+#    #+#             */
-/*   Updated: 2025/02/13 11:13:16 by mbentale         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:58:03 by mbentale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	exec_instruction(t_stack *stack_a, t_stack *stack_b, int i)
 
 int	valid_instruction(char *action, t_stack *stack_a, t_stack *stack_b)
 {
-	int	i;
+	int				i;
 	const char		*arr[] = {"pa\n", "pb\n", "sa\n", "sb\n", "ss\n", "ra\n",
 		"rb\n", "rr\n", "rra\n", "rrb\n", "rrr\n"};
 

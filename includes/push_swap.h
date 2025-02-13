@@ -63,7 +63,8 @@ void				push_smallest(t_stack *a, t_stack *b);
 int					*clone_stack(t_stack *stack);
 void				quick_sort(int *arr, int start, int end);
 void				get_index(t_stack *stack, int *arr);
-int    				valid_instruction(char *action, t_stack *stack_a, t_stack *stack_b);
+int					valid_instruction(char *action, t_stack *stack_a,
+						t_stack *stack_b);
 void				ft_checker(t_stack *a, t_stack *b, char *str, int status);
 
 #endif
