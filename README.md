@@ -29,15 +29,20 @@ This implementation uses a **chunk-based sorting algorithm**, optimized for both
 
 To compile the program:
 
-```make```
-
+```sh
+make
+```
 To run the program:
 
-```./push_swap [numbers...]```
+```sh
+./push_swap [numbers...]
+```
 
 Example:
 
-```./push_swap 3 2 5 1 4```
+```sh
+./push_swap 3 2 5 1 4
+```
 
 
 ---
@@ -62,12 +67,16 @@ Example:
 
 To check if your program is sorting correctly using the 42 checker:
 
-```ARG="4 3 2 1"; ./push_swap $ARG | ./checker $ARG```
+```sh
+ARG="4 3 2 1"; ./push_swap $ARG | ./checker $ARG
+```
 
 
 To see how many moves your program uses:
 
-```ARG="4 3 2 1"; ./push_swap $ARG | wc -l```
+```sh
+ARG="4 3 2 1"; ./push_swap $ARG | wc -l
+```
 
 ---
 
@@ -85,19 +94,27 @@ As part of the bonus, a `checker` program is included.
 
 Compile the bonus:
 
-```make bonus```
+```sh
+make bonus
+```
 
 If the operations sort the stack correctly, you'll get:
 
-```OK```
+```sh
+OK
+```
 
 Otherwise:
 
-```KO```
+```sh
+KO
+```
 
 If there’s an error (e.g., invalid instruction), it prints:
 
-```Error```
+```sh
+Error
+```
 
 ## 📈 Optimization Tips
 
